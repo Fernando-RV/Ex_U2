@@ -12,7 +12,13 @@ class EstudiantesController extends Controller
         $estudiantes = Estudiante::get();
         return view('listado', compact('estudiantes'));
     }
-    
+
+    public function show(Estudiante $estudiante){
+        return view('estudiante', [
+            'estudiante' => $estudiante,
+        ]);
+    }
+
     public function create()
     {
         return view('ingreso');
